@@ -1,0 +1,12 @@
+dashboard_customer = rfm_model.merge(
+    churn_df[["Customer_ID", "Churn"]],
+    on="Customer_ID",
+    how="left"
+)
+
+dashboard_customer.to_csv(
+    "../outputs/dashboard_customer.csv",
+    index=False
+)
+
+print("Dashboard customer data saved!")
